@@ -204,15 +204,14 @@ def ex08():
         user_num = int(input("Please enter a positive number that is below 20: "))
         if not(0 <= user_num <= 20):
             print("out of bounds")
-            exit()
-        for num in range(1, user_num + 1):
-          print(user_num*num)
+        else:
+          for num in range(1, user_num + 1):
+            print(user_num*num)
           
     except ValueError:
         print("thats not a number?")
     
     pass
-
 # ---------- Exercise 9 ----------
 
 
@@ -242,7 +241,15 @@ def ex09():
             print()
         except ValueError:
           print(f"No {is_food.title()} is in your list")
-          exit()
+          user_is_food = input(f"would you like to add {is_food} to your list?(y/n): ")
+          if user_is_food == "y":
+             user_food_list.insert(0, is_food)
+             print(f"first food item {user_food_list[len(user_food_list)-1].title()}")
+             print(f"Last food item {user_food_list[0].title()}")
+             print(f"Langth of list {len(user_food_list)}")
+             exit()
+          else:
+             exit()
         else:
            print(f"Yes {is_food.title()} is in your list")
            exit()
