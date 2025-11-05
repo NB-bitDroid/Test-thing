@@ -68,7 +68,7 @@ def ex03():
     """
     # TODO: Implement per prompt
     username = input("Enter full name: ")
-    username = username.strip(" ").title()
+    username = username.strip(" ").upper()
     print(username)
     print(f"Length of Name: {len(username.strip().strip(" "))}")
     pass
@@ -86,16 +86,16 @@ def ex04():
     Evaluates tasks: 10, 17
     """
     # TODO: Implement per prompt
-    user_test_score = int(input("Please enter your test score(0-100): "))
+    user_test_score = float(input("Please enter your test score(0-100): "))
     if user_test_score > 100 or user_test_score < 0:
         print("Invalid")
     if user_test_score >= 93 and user_test_score <= 100:
         print("You got an A good job!")
-    if user_test_score >= 86 and user_test_score <= 93:
+    if user_test_score >= 85 and user_test_score < 93:
         print("You got a B thats still pretty good!")
-    if user_test_score >= 78 and user_test_score <= 85:
+    if user_test_score >= 78 and user_test_score < 85:
         print("You gat a C thats alright")
-    if user_test_score >= 70 and user_test_score <= 77:
+    if user_test_score >= 70 and user_test_score < 78:
         print("Hey at least its not an F")
     if user_test_score < 70:
         print("Hey its okay to fail, it just means your learning just try harder next time.")
@@ -165,6 +165,7 @@ def ex07():
     user_item_list = [""]
     item_price_list = [""]
     user_item = ""
+    all_item_total = 0
     while not(user_item == "q"):
       user_item = input("Please enter your items name(hit q to exit): ").lower()
       if user_item == "q":
@@ -179,7 +180,6 @@ def ex07():
         exit()
       item_price = float(input(f"Please enter the price of {user_item}: "))
       item_price_list.insert(0, item_price)
-      all_item_total = 0
       all_item_total += item_price
       user_item_list.insert(0, user_item)
 
@@ -204,6 +204,7 @@ def ex08():
         user_num = int(input("Please enter a positive number that is below 20: "))
         if not(0 <= user_num <= 20):
             print("out of bounds")
+            exit()
         for num in range(1, user_num + 1):
           print(user_num*num)
           
@@ -305,17 +306,17 @@ def ex11():
 def main():
     """Call exercises here. Comment out any you’re not ready to run yet."""
     # Uncomment exercises as you complete them:
-    ex01()
-    ex02()
-    ex03()
-    ex04()
-    ex05()
-    ex06()
-    ex07()
-    ex08()
-    ex09()
-    ex10()
-    ex11()
+    #ex01()
+    #ex02()
+    #ex03()
+    #ex04()
+    #ex05()
+    #ex06()
+    #ex07()
+    #ex08()
+    #ex09()
+    #ex10()
+    #ex11()
     pass
 
 
